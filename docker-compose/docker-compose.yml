@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+  pythonapp:
+    build:
+        context: .
+        dockerfile: "Dockerfile.dockerfile"
+        network: host
+    depends_on:
+      - mariadb
+      - mosquitto
+    command: sh -c "sleep 10s ; python ./main.py"
+    tty: true
+
+  mariadb:
+    image: mariadb
+    environment:    
+      - MYSQL_DATABASE=iiot_case
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MARIADB_ROOT_PASSWORD=robotlab
+    ports:
+      - "3306:3306"
+
+  mosquitto:
+    image: eclipse-mosquitto
+    volumes:
+      #- C:\Users\Martin\Documents\config\mosquitto.conf:/mosquitto/config/mosquitto.conf 
+      - .\conf\mosquitto.conf:/mosquitto/config/mosquitto.conf
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+  node-red:
+    image: nodered/node-red
+    volumes:
+      - C:\Users\Martin\Documents:/data # This has to be changed to the local folder .\data
+    depends_on:
+      - mariadb
+      - mosquitto
+    ports:
+      - "1880:1880"
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./portainer-data:/data
+    ports:
+      - 9000:9000

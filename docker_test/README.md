@@ -13,3 +13,10 @@ This section will contain go through the installation and setup of the docker co
 ---
 ## Initial Steps
 
+
+
+1. Create node-red flows + credentials that are relevant to the demo
+2. Create image from raspAP so a wifi can be automatically setup. 
+3. Make sure all files are in the necessary folders such that the docker-compose directory is readable and understandable. 
+4. Change python code to something useful, such that it can be used in the future.
+5. Add FOTA to the ESP's such that it'll be easy to edit code in the future.

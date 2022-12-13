@@ -2,7 +2,5 @@ docker_test/node-red-config/.config.nodes.json
 docker_test/node-red-config/.config.users.json
 docker_test/node-red-config/.config.users.json.backup
 docker_test/node-red-config/.flows.json.backup
-docker_test/node-red-config/.npm/_logs/2022-12-13T08_53_07_156Z-debug-0.log
-docker_test/node-red-config/.npm/_logs/2022-12-13T08_53_54_049Z-debug-0.log
-docker_test/node-red-config/.npm/_logs/2022-12-*
+docker_test/node-red-config/.npm/_logs/*
 

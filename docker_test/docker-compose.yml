@@ -24,11 +24,11 @@ services:
   mosquitto:
     image: eclipse-mosquitto
     volumes:
-      #- C:\Users\Martin\Documents\config\mosquitto.conf:/mosquitto/config/mosquitto.conf 
       - .\conf\mosquitto.conf:/mosquitto/config/mosquitto.conf
     ports:
       - "1883:1883"
       - "9001:9001"
+      
   node-red:
     build:
       context: .

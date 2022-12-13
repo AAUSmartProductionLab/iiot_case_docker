@@ -37,13 +37,15 @@ services:
     depends_on:
       - mariadb
       - mosquitto
+    volumes:
+      - ./node-red-config:/data
     ports:
       - "1880:1880"
 
   limboesp:
     image: limbomedia/limboesp
     volumes:
-      - ./limbo_data:/data limbomedia/limboesp
+      - ./limbo_data:/data/limbomedia/limboesp
     ports:
       - "8080:8080"
     

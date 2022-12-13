@@ -1,5 +1,13 @@
 [
     {
+        "id": "5c35bea3fb8981cc",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "0c5878e41fa123ad",
         "type": "tab",
         "label": "The Basics",
@@ -5735,6 +5743,60 @@
             [
                 "c3052bf86e4ac20b"
             ]
+        ]
+    },
+    {
+        "id": "053cc7f275febeb6",
+        "type": "inject",
+        "z": "0c5878e41fa123ad",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1060,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4324e625bddc9b68",
+        "type": "inject",
+        "z": "0c5878e41fa123ad",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1020,
+        "y": 460,
+        "wires": [
+            []
         ]
     },
     {
